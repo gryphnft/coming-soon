@@ -7,12 +7,12 @@ module.exports = {
 
   deploy : {
     production : {
-      user : process.env.USER,
-      host : process.env.HOST,
-      key  : process.env.KEY,
+      user : process.env.EC2USER,
+      host : process.env.EC2HOST,
+      key  : process.env.EC2KEY,
       ref  : 'origin/main',
-      repo : process.env.REPO,
-      path : process.env.PATHDIR,
+      repo : process.env.EC2REPO,
+      path : process.env.EC2PATH,
       'pre-deploy-local': '',
       'post-deploy' : 'yarn install && pm2 reload ecosystem.config.js --env production',
       'pre-setup': ''
